@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Desafio 02</title>
+	</head>
+	<style>
+		body{
+			background-color: rgb(242, 242, 242);
+			font-family: 'Montserrat', sans-serif;
+		}
+		.dois{
+			overflow: auto;
+		}
+		h3{
+			color: rgb(0, 153, 153);
+			font-family: 'Big Shoulders Inline Text', cursive;
+		}
+		h1, h2{
+			color: rgb(0, 102, 102);
+			font-family: 'Big Shoulders Inline Text', cursive;
+		}
+		a{
+			color: rgb(0, 102, 102);
+			font-family: 'Big Shoulders Inline Text', cursive;
+		}
+		p{
+			color: rgb(0, 153, 153);
+			font-family: 'Big Shoulders Inline Text', cursive;
+		}
+
+
+	</style>
+	<body>
+		<button class="voltar"><a href="./java.html">Voltar</a></button>
+		<h1> Desafio 02 do RocketSeat</h1>
+		<h2> Ana Clara Teles</h2>
+		<h3> Exercício 1 </h3>
+		<div id="exercicio01">
+			<button onclick="quadrado()">Clique em mim</button>
+		</div>
+
+		<h3> Exercício 2 </h3>
+		<div id="exercicio02">
+			<button onclick="square()">Clique em mim</button>
+			<p>E agora passe o mouse por cima do quadrado</p>
+		</div>
+
+		<h3> Exercício 3 </h3>
+		<div id="exercicio03">
+		</div>
+
+		<h3> Exercício 4 </h3>
+		<div id="exercicio04">
+		</div>
+		<input type="text" name="nome" id="nome">
+		<button onclick="adicionar()">Adicionar</button>
+
+
+	</body>
+		<script type="text/javascript">
+			/* Exercício 1 */ 
+			function quadrado(){
+		
+				var quadrado = document.createElement("div");
+				quadrado.style.width = '100px';
+				quadrado.style.height = '100px';
+				quadrado.style.backgroundColor = '#f00';
+				quadrado.style.margin = '3px';
+
+
+				document.getElementById("exercicio01").appendChild(quadrado);
+	
+			}
+
+			/* Exercício 2 */
+			function square(){
+		
+				var square = document.createElement("div");
+				square.style.width = '100px';
+				square.style.height = '100px';
+				square.style.backgroundColor = '#f00';
+				square.style.margin = '3px';
+
+
+				document.getElementById("exercicio02").appendChild(square);
+				square.onmouseover = function mudaCor(){
+					square.style.backgroundColor = getRandomColor();
+				}
+			}
+
+			function getRandomColor(){
+				var letters = "0123456789ABCDEF";
+				var color = "#";
+				for (var i = 0; i < 6; i++){
+					color += letters[Math.floor(Math.random() * 16)];
+				}
+				return color;
+			}
+
+			/* Exercício 3 */
+			var nomes = ["Diego", "Gabriel", "Lucas"];
+			var lista = document.createElement("ul");
+			var iden = document.createAttribute("id");
+			iden.value = "lista03";
+			lista.setAttributeNode(iden);
+			document.getElementById("exercicio03").appendChild(lista);
+			var qtd = nomes.length;
+				for (var i = 0; i < qtd; i++){
+					var elemento = document.createElement("li");
+					elemento.innerText = nomes[i];
+					document.getElementById("lista03").appendChild(elemento);
+				}
+
+			/* Exercício 4 */
+			var nomes = ["Diego", "Gabriel", "Lucas"];
+			var lista = document.createElement("ul");
+			document.getElementById("exercicio04").appendChild(lista);
+			var qtd = nomes.length;
+			for (var i = 0; i < qtd; i++){
+				var item = document.createElement("li");
+				item.innerText = nomes[i];
+				document.getElementById("lista04").appendChild(item);
+			}
+
+			function adicionar(){
+				var novoItem = document.getElementById("nome").value;
+				nomes.push(novoItem);
+				document.getElementById("nome").value = '';
+				var lista = document.createElement("ul");
+				var iden = document.createAttribute("id");
+				iden.value = "lista04";
+				lista.setAttributeNode(iden);
+				document.getElementById("exercicio04").appendChild(lista);
+				document.getElementById("lista04").innerHTML = '';
+				var qtd = nomes.length;
+					for (var i = 0; i < qtd; i++){
+					var item = document.createElement("li");
+					item.innerText = nomes[i];
+					document.getElementById("lista04").appendChild(item);
+					}
+			}
+
+</script>
+</html>
