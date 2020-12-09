@@ -101,43 +101,48 @@
 			/* Exercício 3 */
 			var nomes = ["Diego", "Gabriel", "Lucas"];
 			var lista = document.createElement("ul");
-			var iden = document.createAttribute("id");
-			iden.value = "lista03";
-			lista.setAttributeNode(iden);
-			document.getElementById("exercicio03").appendChild(lista);
-			var qtd = nomes.length;
-				for (var i = 0; i < qtd; i++){
-					var elemento = document.createElement("li");
-					elemento.innerText = nomes[i];
-					document.getElementById("lista03").appendChild(elemento);
+				function crialista3(){
+				var lista = document.createElement("ul");
+				var iden = document.createAttribute("id");
+				iden.value = "lista03";
+				lista.setAttributeNode(iden);
+				document.getElementById("exercicio03").appendChild(lista);
+					for(nome of nomes){
+						var nomeElement = document.createElement("li");
+						nometxt = document.createTextNode(nome);
+						nomeElement.appendChild(nometxt);
+						document.getElementById("lista03").appendChild(nomeElement);
+					}
 				}
+			crialista3();
 
 			/* Exercício 4 */
-			var nomes = ["Diego", "Gabriel", "Lucas"];
-			var lista = document.createElement("ul");
-			document.getElementById("exercicio04").appendChild(lista);
-			var qtd = nomes.length;
-			for (var i = 0; i < qtd; i++){
-				var item = document.createElement("li");
-				item.innerText = nomes[i];
-				document.getElementById("lista04").appendChild(item);
-			}
-
-			function adicionar(){
-				var novoItem = document.getElementById("nome").value;
-				nomes.push(novoItem);
-				document.getElementById("nome").value = '';
+			function crialista4(){
 				var lista = document.createElement("ul");
 				var iden = document.createAttribute("id");
 				iden.value = "lista04";
 				lista.setAttributeNode(iden);
 				document.getElementById("exercicio04").appendChild(lista);
-				document.getElementById("lista04").innerHTML = '';
+				for(nome of nomes){
+					var nomeElement = document.createElement("li");
+					nometxt = document.createTextNode(nome);
+					nomeElement.appendChild(nometxt);
+					document.getElementById("lista04").appendChild(nomeElement);
+				}
+			}
+			crialista4();
+
+			function adicionar(){
+				var novoItem = document.getElementById("nome").value;
+				nomes.push(novoItem);
+				document.getElementById("nome").value = '';
+				document.getElementById("exercicio04").appendChild(lista);
+				document.getElementById("lista04").innerHTML = "";
 				var qtd = nomes.length;
 					for (var i = 0; i < qtd; i++){
-					var item = document.createElement("li");
-					item.innerText = nomes[i];
-					document.getElementById("lista04").appendChild(item);
+					var nome = document.createElement("li");
+					nome.innerText = nomes[i];
+					document.getElementById("lista04").appendChild(nome);
 					}
 			}
 
