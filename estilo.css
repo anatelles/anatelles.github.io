@@ -1,0 +1,39 @@
+
+	<style>
+		body{
+			background-color: rgb(242, 242, 242);
+			font-family: 'Montserrat', sans-serif;
+		}
+		.dois{
+			overflow: auto;
+		}
+		h3{
+			color: rgb(0, 153, 153);
+			font-family: 'Big Shoulders Inline Text', cursive;
+		}
+		h1, h2{
+			color: rgb(0, 102, 102);
+			font-family: 'Big Shoulders Inline Text', cursive;
+		}
+		h4{
+			font-family: 'Big Shoulders Inline Text', cursive;
+
+		}
+		a{
+			color: rgb(0, 102, 102);
+			font-family: 'Big Shoulders Inline Text', cursive;
+		}
+		p{
+			
+			font-family: 'Big Shoulders Inline Text', cursive;
+		}
+		ul{
+			font-family: 'Big Shoulders Inline Text', cursive;
+		}
+		button{
+			color: rgb(0, 102, 102);
+		}
+
+
+
+	</style>
