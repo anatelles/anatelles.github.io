@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laboratório de jQuery 1</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="style.css" rel="stylesheet">
+	<script>
+		$(function(){ 
+
+		function Livro (titulo, descricao, genero, autor){
+				this.titulo = titulo;
+				this.genero = genero;
+				this.descricao = descricao;
+				this.autor = autor;
+			}
+
+			let acervoArray = new Array();
+			$("#add_acervo").click(function(){
+				let tituloLivro = $("#titulo").val();
+				let descricaoLivro = $("#descricao").val();
+				let generoLivro = $("#genero").val();
+				let autorLivro = $("#autor").val();
+
+				let livro = new Livro(tituloLivro, descricaoLivro, generoLivro, autorLivro);
+				acervoArray.push(livro);
+				$("input[name='acervo_post']").val(JSON.stringify(acervoArray));
+
+
+				$("#acervo")
+					.append(
+						$("<tr>")
+							.append(
+								$("<td>")
+									.text(tituloLivro)
+								)
+							.append(
+								$("<td>")
+									.text(descricaoLivro)
+							)
+							.append(
+								$("<td>")
+									.text(generoLivro)
+							)
+							.append(
+								$("<td>")
+									.text(autorLivro)
+							)
+							.append(
+								$("<td>")
+									.append($("<img>").attr('src', 'lixeira.png'))
+								)
+					);
+			})
+
+			$("#acervo").on("click","img", function(){
+				$(this).parents("#acervo tr").remove();
+			})
+
+		});
+	</script>
+</head>
+<body>
+
+<fieldset>
+	<legend>Cadastro de Livros</legend>
+	<input type="text" id="titulo" placeholder="Título"><br>
+	<textarea id="descricao" placeholder="Descrição"></textarea> <br>
+	<select id="genero">
+		<option value="Romance">Romance</option>
+		<option value="Drama">Drama</option>
+		<option value="Terror">Terror</option>
+		<option value="Ficção">Ficção</option>
+		<option value="Técnico">Técnico</option>
+	</select>
+	<br>
+	<input type="text" id="autor" placeholder="Autor">
+	<br>
+	<button id="add_acervo">Cadastrar</button>
+</fieldset>
+
+<h2>Catálogo</h2>
+
+	<table id="acervo" class="tabela">
+		<tr><th>Título</th><th>Descrição</th><th>Gênero</th><th>Autor</th><th></th></tr>
+	</table>
+
+
+	<form action="http://rafaelescalfoni.net/web/livros.php" method="post">
+		<input type="hidden" name="acervo_post">
+		<input type="submit" class="botao" value="Salvar no BD">
+	</form>
+	<br><br><br><br>
+	<a href="./java.html">Voltar</a>
+</body>
+</html>
