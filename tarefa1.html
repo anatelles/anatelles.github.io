@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="UTF-8">
+		<link href="estilo.css" rel="stylesheet">
+		<title>JavaScript</title>
+	</head>
+	<body>
+		<button class="voltar"><a href="./java.html">Voltar</a></button>
+		<h1>Introdução à programação JavaScript</h1>
+		<h2> Ana Clara Teles</h2>
+		<h3> Exercício 1 </h3>
+		<h4> Soma números</h4>
+		<p>Insira dois números</p>
+		<input id="operando1">
+		<br> <br>
+		<input id="operando2">
+		<br> <br>
+		<button onclick="funcaoSoma();">Calcular</button>
+		<p id="resultado"></p>
+
+		<h3> Exercício 2 </h3>
+		<h4> Número maior</h4>
+		<p>Insira dois números</p>
+		<input id="op1">
+		<br> <br>
+		<input id="op2">
+		<br> <br>
+		<button onclick="funcaoMaior();">Calcular</button>
+		<p id="resultado2"></p>
+
+		<h3> Exercício 3 </h3>
+		<h4> Número primo</h4>
+		<p>Insira um número</p>
+		<input id="numero">
+		<br> <br>
+		<button onclick="funcaoPrimo();">Calcular</button>
+		<p id="resultado3"></p>
+
+		<h3> Exercício 4 </h3>
+		<h4> Calcular a hipotenusa</h4>
+		<p>Insira os lados dos catetos</p>
+		<input id="numero1">
+		<br> <br>
+		<input id="numero2">
+		<br> <br>
+		<button onclick="funcaoHipotenusa();">Calcular</button>
+		<p id="resultado4"></p>
+
+		<h3> Exercício 5 </h3>
+		<h4> Calcular novo salário</h4>
+		<p>Insira o valor do salário mensal e logo em seguida o percentual de reajuste </p>
+		<input id="operando5">
+		<br> <br>
+		<input id="operando51">
+		<br> <br>
+		<button onclick="funcaoSalario();">Calcular</button>
+		<p id="resultado5"></p>
+
+		<h3> Exercício 6 </h3>
+		<h3> Calcular custo de um carro novo</h3>
+		<p>Insira o custo de fábrica do carro  </p>
+		<input id="operando6">
+		<br> <br>
+		<button onclick="funcaoCarro();">Calcular</button>
+		<p id="resultado6"></p>
+
+		<h3> Exercício 7 </h3>
+		<h3> Calcular custo de um carro novo</h3>
+		<p>Insira o salário fixo do vendedor </p>
+		<input id="operando71">
+		<br> <br>
+		<p>Insira o número de carros vendidos</p>
+		<input id="operando72">
+		<br> <br>
+		<p>Insira o valor recebido por carros vendidos</p>
+		<input id="operando73">
+		<br> <br>
+		<p>Insira o valor total das vendas</p>
+		<input id="operando74">
+		<br> <br>
+		<button onclick="funcaoVendedor();">Calcular</button>
+		<p id="resultado7"></p>
+
+		<h3> Exercício 8 </h3>
+		<h3> Calcular graus Celcius</h3>
+		<p>Insira a temperatura em Fahrenheit </p>
+		<input id="operando8">
+		<br> <br>
+		<button onclick="funcaoCelcius();">Calcular</button>
+		<p id="resultado8"></p>
+
+		<h3> Exercício 9 </h3>
+		<h3> Calcular média final de um aluno</h3>
+		<p>Insira a primeira nota </p>
+		<input id="operando91">
+		<br> <br>
+		<p>Insira a segunda nota</p>
+		<input id="operando92">
+		<br> <br>
+		<p>Insira a terceira nota</p>
+		<input id="operando93">
+		<br> <br>
+		<button onclick="funcaoMedia();">Calcular</button>
+		<p id="resultado9"></p>
+
+		<h3> Exercício 10 </h3>
+		<h3> Calcular custo total da compra</h3>
+		<p>Insira a quantidade de maçãs </p>
+		<input id="operando10">
+		<br> <br>
+		<button onclick="funcaoCompra();">Calcular</button>
+		<p id="resultado10"></p>
+
+		<button class="voltar"><a href="./java.html">Voltar</a></button>
+
+
+	</body>
+	<script type="text/javascript">
+
+		// Exercício 1
+		function funcaoSoma(){
+				var op1 = document.getElementById("operando1").value;
+				var op2 = document.getElementById("operando2").value;
+
+				op1 = parseInt(op1);
+				op2 = parseInt(op2);
+				
+				var resultado = soma(op1, op2);
+				var exibe = "O resultado da soma entre " + op1 + " e " + op2 + " é " + resultado;
+				 document.getElementById('resultado').innerHTML = exibe;
+			}
+
+			function soma(operando1, operando2){
+			return operando1 + operando2;
+			}
+
+		// Exercício 2
+		function funcaoMaior(){
+				var op1 = document.getElementById("op1").value;
+				var op2 = document.getElementById("op2").value;
+
+				op1 = parseInt(op1);
+				op2 = parseInt(op2);
+				
+				var exibe = maior(op1, op2);
+				 document.getElementById("resultado2").innerHTML = exibe;
+			}
+
+			function maior(operando1, operando2){
+				var result;
+				if(operando1 > operando2)
+					return  result = "O número maior é o " +operando1;
+				else if (operando1 < operando2)
+					return result = "O número maior é o " +operando2;
+				else 
+					return result = "Os números são iguais";
+				
+			}
+
+			//Exercício 3
+
+			function funcaoPrimo(){
+				var op = document.getElementById("numero").value;
+				
+				op = parseInt(op);
+				
+				
+				var exibe = primo(op);
+				 document.getElementById("resultado3").innerHTML = exibe;
+			}
+
+			function primo(operando){
+				var result;
+				var i;
+				var p=0;
+				for (i=1; i<=operando; i++){
+					if(operando%i==0)
+						p++;
+
+			}
+				if(p==2)
+					return result = "O número " +operando+ " é primo";
+				else
+					return result = "O número " +operando+ " não é primo";
+			}
+
+			//Exercício 4
+			function funcaoHipotenusa(){
+				var op1 = document.getElementById("numero1").value;
+				var op2 = document.getElementById("numero2").value;
+
+				op1 = parseInt(op1);
+				op2 = parseInt(op2);
+				
+				
+				var exibe = hipotenusa(op1, op2);
+				 document.getElementById("resultado4").innerHTML = exibe;
+			}
+
+			function hipotenusa(operando1, operando2){
+				var result;
+				var catetos =  ((operando1*operando1) + (operando2*operando2));
+				var hipotenusa = Math.sqrt (catetos);
+				return result = "O tamanho da hipotesuna é " +hipotenusa;
+			}
+
+			//Exercício 5
+			function funcaoSalario(){
+				var op1 = document.getElementById("operando5").value;
+				var op2 = document.getElementById("operando51").value;
+
+				op1 = parseFloat(op1);
+				op2 = parseFloat(op2);
+				
+				
+				var exibe = salario(op1, op2);
+				 document.getElementById("resultado5").innerHTML = exibe;
+			}
+
+			function salario(operando5, operando51){
+				var result;
+				var percentual = ((operando51/100) * operando5);
+				var novosalario = operando5 + percentual;
+				return result = "O valor do novo salário é R$" +novosalario;
+			}
+
+			//Exercício 6
+			function funcaoCarro(){
+				var op1 = document.getElementById("operando6").value;
+				
+				op1 = parseFloat(op1);
+				
+				
+				var exibe = carro(op1);
+				 document.getElementById("resultado6").innerHTML = exibe;
+			}
+
+			function carro(operando1){
+				var result;
+				var distribuidor = operando6 * 0.28;
+				var imposto = operando6 * 0.45;
+				var custofinal= operando6 + distribuidor + imposto;
+				return result = "O custo final do carro é R$" +custofinal;
+			}
+
+			//Exercício 7
+			function funcaoVendedor(){
+				var op1 = document.getElementById("operando71").value;
+				var op2 = document.getElementById("operando72").value;
+				var op3 = document.getElementById("operando73").value;
+				var op4 = document.getElementById("operando74").value;
+				
+				op1 = parseFloat(op1);
+				op2 = parseFloat(op2);
+				op3 = parseFloat(op3);
+				op4 = parseFloat(op4);
+				
+				
+				var exibe = salario(op1, op2, op3, op4);
+				 document.getElementById("resultado7").innerHTML = exibe;
+			}
+
+			function salario(operando71, operando72, operando73, operando74){
+				var result;
+				var comissao = operando72 * operando73;
+				var vendas = operando74 * 0.05;
+				var salariofinal= operando71 + comissao + vendas;
+				return result = "O salário final do vendedor é R$" +salariofinal;
+			}
+
+			//Exercício 8
+			function funcaoCelcius(){
+				var op1 = document.getElementById("operando8").value;
+				
+				op1 = parseFloat(op1);
+				
+				
+				
+				var exibe = celsius(op1);
+				 document.getElementById("resultado8").innerHTML = exibe;
+			}
+
+			function celsius(operando1){
+				var result;
+				var fahrenheit = ((operando1 - 32) / 9);
+				var graucelsius = fahrenheit * 5;
+				return result = "O grau em Celcius é " + graucelsius + "°C"
+			}
+
+			//Exercício 9
+			function funcaoMedia(){
+				var op1 = document.getElementById("operando91").value;
+				var op2 = document.getElementById("operando92").value;
+				var op3 = document.getElementById("operando93").value;
+				
+				op1 = parseFloat(op1);
+				op2 = parseFloat(op2);
+				op3 = parseFloat(op3);
+				
+				
+				var exibe = final(op1, op2, op3);
+				 document.getElementById("resultado9").innerHTML = exibe;
+			}
+
+			function final(operando91, operando92, operando93){
+				var result; 
+				var mediafinal= (((operando91 * 2) + (operando92 * 3) + (operando93 * 5)) / 10);
+
+				return result = "A média final do aluno é " +mediafinal;
+			}
+
+			//Exercício 10
+			function funcaoCompra(){
+				var op1 = document.getElementById("operando10").value;
+				
+				op1 = parseFloat(op1);
+				
+				
+				 var exibe = macas(op1);
+				 document.getElementById("resultado10").innerHTML = exibe;
+			}
+
+			function macas(operando10){
+				var result;
+				var total
+				if(operando1 < 12)
+					total = operando10 * 1.30;
+				else 
+					total = operando10 * 1;
+
+				return result = "O custo total da compra é R$" + total;
+			}
+			
+</script>
+</html>
