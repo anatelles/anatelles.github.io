@@ -1,34 +1,35 @@
 
 	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 		body{
 			background-color: rgb(242, 242, 242);
-			font-family: 'Montserrat', sans-serif;
+			font-family: 'Roboto', sans-serif;
 		}
 		.dois{
 			overflow: auto;
 		}
 		h3{
 			color: rgb(0, 153, 153);
-			font-family: 'Big Shoulders Inline Text', cursive;
+			font-family: 'Roboto', sans-serif;
 		}
 		h1, h2{
 			color: rgb(0, 102, 102);
-			font-family: 'Big Shoulders Inline Text', cursive;
+			font-family: 'Roboto', sans-serif;
 		}
 		h4{
-			font-family: 'Big Shoulders Inline Text', cursive;
+			font-family: 'Roboto', sans-serif;
 
 		}
 		a{
 			color: rgb(0, 102, 102);
-			font-family: 'Big Shoulders Inline Text', cursive;
+			font-family: 'Roboto', sans-serif;
 		}
 		p{
 			
-			font-family: 'Big Shoulders Inline Text', cursive;
+			font-family: 'Roboto', sans-serif;
 		}
 		ul{
-			font-family: 'Big Shoulders Inline Text', cursive;
+			font-family: 'Roboto', sans-serif;
 		}
 		button{
 			color: rgb(0, 102, 102);
