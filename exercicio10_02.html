@@ -16,9 +16,9 @@
 				  invertFrase1[i] = frase1[qtd-i-1];
 			}
 			$("#a").text("Frase normal:");
-			$("#normal1").text(frase);
+			$("#normal1").text(frase1);
 			$("#b").text("Frase invertida:");
-			$("#invertida1").text(invertFrase.join(""));
+			$("#invertida1").text(invertFrase1.join(""));
 			}
 		)}
 			);
@@ -304,6 +304,12 @@
 		background-attachment: fixed;
 		background-size: 100%;
 	}
+	h1{
+		color: #03989E;
+	}
+	h2{
+		color: #D1977A;
+	}
 </style>
 
 	<body>
@@ -325,9 +331,9 @@
 		<input type="text" id="frase1" placeholder="Escreva uma frase">
 		<input type="submit" id="botao1"  placeholder="Enviar">
 		<p id="a"></p>
-		<p id="normal"></p>
+		<p id="normal1"></p>
 		<p id="b"></p>
-		<p id="invertida"></p>
+		<p id="invertida1"></p>
 		</div>
 		<div id="exer2">
 		<h2>Exercício 2</h2>
