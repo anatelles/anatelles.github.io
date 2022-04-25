@@ -64,9 +64,12 @@ body {
 }
 
 .contactElement {
+  .contactElement {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  text-decoration: none;
+  color: black;
 }
 
 .contactElement p,
