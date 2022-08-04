@@ -58,6 +58,19 @@ body {
   border-bottom: 10px solid #597b6a;
 }
 
+@media (max-width: 840px){
+  .contact{
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px){
+  .contact{
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
+
 .contactBox {
   display: flex;
   flex-direction: column;
