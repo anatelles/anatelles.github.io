@@ -41,6 +41,7 @@ body {
   border-radius: 999999px;
   max-width: 280px;
   aspect-ratio: 1;
+  object-fit: cover;
 }
 .title {
   margin-top: 1.5rem;
